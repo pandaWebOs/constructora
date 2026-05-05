@@ -438,6 +438,38 @@ body {
   font-size: 0.9rem;
 }
 
+/* =========================================
+   BOTÓN FLOTANTE WHATSAPP
+   ========================================= */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: var(--shadow-hover);
+  background-color: #1EBE55;
+  color: white;
+}
+
+.whatsapp-icon {
+  width: 35px;
+  height: 35px;
+}
+
 /* MEDIA QUERIES PARA ADAPTABILIDAD ESPECÍFICA (Tablets y Móviles) */
 @media (max-width: 992px) {
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -473,4 +505,17 @@ body {
   
   .section { padding: 4rem 0; }
   .section-title { margin-bottom: 2rem; }
+
+  /* Ajuste botón flotante en móviles */
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .whatsapp-icon {
+    width: 30px;
+    height: 30px;
+  }
 }
