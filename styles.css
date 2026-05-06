@@ -21,6 +21,12 @@
   padding: 0;
 }
 
+/* CANDADO DE SEGURIDAD PARA MÓVILES (Evita el espacio en blanco a la derecha) */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 html { 
   scroll-behavior: smooth; 
   scroll-padding-top: 5rem; 
@@ -238,10 +244,10 @@ body {
   background: var(--color-primary-soft);
 }
 
-/* CARDS CON AUTO-FIT */
+/* CARDS CON AUTO-FIT CORREGIDO PARA ANDROID */
 .cards-grid { 
   display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
   gap: 2.5rem; 
 }
 
@@ -301,13 +307,11 @@ body {
   box-shadow: var(--shadow-soft);
 }
 
-/* =========================================
-   NUEVA GALERÍA (CARRUSEL)
-   ========================================= */
+/* CARRUSEL DE GALERÍA */
 .carousel-container {
   position: relative;
   width: 100%;
-  padding: 0 10px; /* Espacio para que las flechas no toquen las fotos */
+  padding: 0 10px; 
 }
 
 .carousel-track-wrapper {
@@ -323,7 +327,6 @@ body {
 }
 
 .carousel-slide {
-  /* En PC muestra 3 fotos a la vez */
   min-width: calc((100% - 3rem) / 3); 
   box-sizing: border-box;
 }
@@ -341,7 +344,6 @@ body {
   transform: scale(1.02);
 }
 
-/* Botones Flechas del Carrusel */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -371,12 +373,12 @@ body {
 .next-btn { right: -20px; }
 
 
-/* CONTACTO */
+/* CONTACTO CORREGIDO PARA ANDROID */
 .section-contact { background: var(--color-bg); }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 4rem;
 }
 
@@ -480,7 +482,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* BOTÓN FLOTANTE WHATSAPP */
+/* BOTÓN FLOTANTE WHATSAPP (Ajustado Z-INDEX al máximo) */
 .whatsapp-float {
   position: fixed;
   width: 60px;
@@ -494,7 +496,7 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: var(--shadow-soft);
-  z-index: 1000;
+  z-index: 9999;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
@@ -515,7 +517,6 @@ body {
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-image { order: -1; } 
   
-  /* Ajuste Carrusel para Tablet (Muestra 2 fotos) */
   .carousel-slide { min-width: calc((100% - 1.5rem) / 2); }
 }
 
@@ -549,7 +550,6 @@ body {
   .section { padding: 4rem 0; }
   .section-title { margin-bottom: 2rem; }
 
-  /* Ajuste Carrusel para Móvil (Muestra 1 foto) */
   .carousel-slide { min-width: 100%; }
   .prev-btn { left: 0px; }
   .next-btn { right: 0px; }
